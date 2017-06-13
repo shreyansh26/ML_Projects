@@ -1,9 +1,9 @@
 import numpy as np
 
-def nonlin(x, deriv=False):
+def nonlin(x, deriv=False):                
 	if(deriv==True):
-		return x*(1-x)
-	return 1/(1+np.exp(-x))
+		return x*(1-x)           # Derivative of sigmoid (g(z(i))) gives a(i)*(1-a(i))
+	return 1/(1+np.exp(-x))      # Sigmoid function - always returns value between [0,1]
 	
 # input as a matrix
 X = np.array([[0,0,1],
