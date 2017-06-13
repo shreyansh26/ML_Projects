@@ -19,8 +19,8 @@ y = np.array([[0],
 np.random.seed(1)
 
 # synapses
-syn0 = np.random.random((3,4)) - 1
-syn1 = np.random.random((4,1)) - 1
+syn0 = 2*np.random.random((3,4)) - 1
+syn1 = 2*np.random.random((4,1)) - 1
 
 for j in range(60000):
 
