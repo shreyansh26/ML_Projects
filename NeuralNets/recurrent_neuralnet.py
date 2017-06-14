@@ -127,4 +127,4 @@ for j in range(100000):
 		print(str(a_int) + " + " + str(b_int) + " = " + str(out))
 		print("----------------")
 		
-print("Accuracy(Although not relevant): "+ str((count/10000)))
+print("Accuracy(Although not relevant): "+ str((count/100000)))
