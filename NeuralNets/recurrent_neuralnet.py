@@ -11,6 +11,8 @@ def sigmoid(x, deriv=False):
 int2binary = {}
 binary_dim = 8
 
+count=0 
+
 largest_number = pow(2, binary_dim)
 binary = np.unpackbits(np.array([range(largest_number)], dtype=np.uint8).T, axis=1)
 #print(binary)
@@ -34,7 +36,7 @@ synapse_1_update = np.zeros_like(synapse_1)
 synapse_h_update = np.zeros_like(synapse_h)
 
 # Training logic
-for j in range(10000):
+for j in range(100000):
 
 	# Generate a simple addition problem a+b=c
 	a_int = np.random.randint(largest_number/2)  # Int version
@@ -110,14 +112,19 @@ for j in range(10000):
 	synapse_h_update *= 0
 
     # Print progress
-	if (j%200 == 0):
+	if (j%5000 == 0):
 		print("Error: " + str(overall_error))
 		print("Pred:" + str(d))
 		print("True:" + str(c))
-
+		
+		if np.array_equal(c,d):
+			count+=1
+			
 		out = 0
 
 		for index,x in enumerate(reversed(d)):
 			out += x*pow(2,index)
 		print(str(a_int) + " + " + str(b_int) + " = " + str(out))
 		print("----------------")
+		
+print("Accuracy(Although not relevant): "+ str((count/10000)))
