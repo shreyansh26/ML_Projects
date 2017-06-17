@@ -21,7 +21,7 @@ curl -O https://raw.githubusercontent.com/tensorflow/tensorflow/r1.1/tensorflow/
 python retrain.py --bottleneck_dir=bottlenecks --model_dir=inception --summaries_dir=training_summaries/basic --output_graph=retrained_graph.pb --output_labels=retrained_labels.txt --image_dir=flower_photos
 ```
 
-* Script to test on own image -   
+* Script to test on own image (Already in repo) -   
 ```
 curl -L https://goo.gl/3lTKZs > label_image.py
 ```
