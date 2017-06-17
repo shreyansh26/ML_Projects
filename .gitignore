@@ -1,13 +1,8 @@
 data
 MNIST_data
 */.ipynb_checkpoints
-*/bottlenecks
-*/flower_photos
-*/inception
-*/training_summaries
+*/bottlenecks/
+*/flower_photos/
+*/inception/
+*/training_summaries/
 */retrained_graph.pb
-C:\Users\Shreyansh Singh\Desktop\ML\ML_Projects\Classifiers\ImageClassifiers\bottlenecks
-C:\Users\Shreyansh Singh\Desktop\ML\ML_Projects\Classifiers\ImageClassifiers\inception
-C:\Users\Shreyansh Singh\Desktop\ML\ML_Projects\Classifiers\ImageClassifiers\flower_photos
-C:\Users\Shreyansh Singh\Desktop\ML\ML_Projects\Classifiers\ImageClassifiers\training_summaries
-C:\Users\Shreyansh Singh\Desktop\ML\ML_Projects\Classifiers\ImageClassifiers\retrained_graph.pb
