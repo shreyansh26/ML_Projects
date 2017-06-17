@@ -1,5 +1,7 @@
 from sklearn.datasets import load_iris
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier, export_graphviz
+from sklearn.externals.six import StringIO
+import pydot
 import numpy as np
 
 iris = load_iris()
@@ -32,3 +34,12 @@ dec_tree.fit(train_data, train_target)
 
 print(test_target.reshape(1,3))
 print(dec_tree.predict(test_data))
+
+
+# Visualise data
+dot_data = StringIO()
+export_graphviz(dec_tree, out_file='irisTree.dot', feature_names=iris.feature_names, class_names=iris.target_names, filled=True, rounded=True, impurity=False)
+'''
+graph = pydot.graph_from_dot_data(dot_data.getvalue())
+graph[0].write_pdf("iris.pdf")
+'''
