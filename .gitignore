@@ -1,3 +1,8 @@
 data
 MNIST_data
 */.ipynb_checkpoints
+*/bottlenecks
+*/flower_photos
+*/inception
+*/training_summaries
+*/retrained_graph.pb
