@@ -6,3 +6,4 @@ Classifiers/ImageClassifiers/flower_photos/
 Classifiers/ImageClassifiers/inception/
 Classifiers/ImageClassifiers/training_summaries/
 Classifiers/ImageClassifiers/retrained_graph.pb
+SentimentAnalysis/IMDB_SentimentAnalysis/imdb.pkl
