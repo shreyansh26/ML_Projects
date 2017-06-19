@@ -10,3 +10,5 @@ SentimentAnalysis/IMDB_SentimentAnalysis/imdb.pkl
 SentimentAnalysis/GameReview_Sentiment/GameReviewSentiment2/model.tfl.data-00000-of-00001
 SentimentAnalysis/GameReview_Sentiment/GameReviewSentiment2/model.tfl.index
 SentimentAnalysis/GameReview_Sentiment/GameReviewSentiment2/model.tfl.meta
+WordVectorisation/data
+WordVectorisation/trained
