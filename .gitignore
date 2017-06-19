@@ -7,3 +7,6 @@ Classifiers/ImageClassifiers/inception/
 Classifiers/ImageClassifiers/training_summaries/
 Classifiers/ImageClassifiers/retrained_graph.pb
 SentimentAnalysis/IMDB_SentimentAnalysis/imdb.pkl
+SentimentAnalysis/GameReview_Sentiment/GameReviewSentiment2/model.tfl.data-00000-of-00001
+SentimentAnalysis/GameReview_Sentiment/GameReviewSentiment2/model.tfl.index
+SentimentAnalysis/GameReview_Sentiment/GameReviewSentiment2/model.tfl.meta
