@@ -12,3 +12,4 @@ SentimentAnalysis/GameReview_Sentiment/GameReviewSentiment2/model.tfl.index
 SentimentAnalysis/GameReview_Sentiment/GameReviewSentiment2/model.tfl.meta
 WordVectorisation/data
 WordVectorisation/trained
+ImageStyleTransfer/GenerateArt/styles
