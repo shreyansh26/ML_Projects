@@ -13,3 +13,7 @@ SentimentAnalysis/GameReview_Sentiment/GameReviewSentiment2/model.tfl.meta
 WordVectorisation/data
 WordVectorisation/trained
 ImageStyleTransfer/GenerateArt/styles
+AgeDetection/Test
+AgeDetection/Test
+AgeDetection/Train
+AgeDetection/Train2
