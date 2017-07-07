@@ -9,6 +9,32 @@ from sklearn.naive_bayes import MultinomialNB, GaussianNB, BernoulliNB
 from sklearn.linear_model import LogisticRegression, SGDClassifier
 from sklearn.svm import SVC, LinearSVC, NuSVC
 
+from nltk.classify import ClassifierI
+from statistics import mode 
+
+
+# Own Classifer
+class VoteClassifer(ClassifierI):
+	def __init__(self, *classifiers):
+		self._classifiers = classifiers
+
+	def classify(self, features):
+		votes = []
+		for c in self._classifiers:
+			v = c.classify(features)
+			votes.append(v)
+		return mode(votes)
+
+	def confidence(self, features):
+		votes = []
+		for c in self._classifiers:
+			v = c.classify(features)
+			votes.append(v)
+		choice_votes =  votes.count(mode(votes))
+		conf = choice_votes / len(votes)
+		return conf
+
+
 stop_words = set(stopwords.words("english"))
 
 documents = [(list(movie_reviews.words(fileid)), category)
@@ -85,10 +111,12 @@ SGD_Classifier = SklearnClassifier(SGDClassifier())
 SGD_Classifier.train(list(training_set))
 print("SGD_Classifier accuracy percent: ", (nltk.classify.accuracy(SGD_Classifier, testing_set))*100)
 
+# Leave SVC since it gives poor results as compared to others
+'''
 SVC_Classifier = SklearnClassifier(SVC())
 SVC_Classifier.train(list(training_set))
 print("SVC_Classifier accuracy percent: ", (nltk.classify.accuracy(SVC_Classifier, testing_set))*100)
-
+'''
 LinearSVC_Classifier = SklearnClassifier(LinearSVC())
 LinearSVC_Classifier.train(list(training_set))
 print("LinearSVC_Classifier accuracy percent: ", (nltk.classify.accuracy(LinearSVC_Classifier, testing_set))*100)
@@ -98,3 +126,16 @@ NuSVC_Classifier.train(list(training_set))
 print("NuSVC_Classifier accuracy percent: ", (nltk.classify.accuracy(NuSVC_Classifier, testing_set))*100)
 
 
+voted_classifier = VoteClassifer(classifer, MNB_Classifier, BNB_Classifier, LogisticRegression_Classifier, SGD_Classifier, LinearSVC_Classifier, NuSVC_Classifier)
+
+print("voted_classifier accuracy percent: ", (nltk.classify.accuracy(voted_classifier, testing_set))*100)
+
+print("Classification: ", voted_classifier.classify(testing_set[1][0]), "Confidence %: ", voted_classifier.confidence(testing_set[1][0])*100)
+
+print("Classification: ", voted_classifier.classify(testing_set[2][0]), "Confidence %: ", voted_classifier.confidence(testing_set[2][0])*100)
+
+print("Classification: ", voted_classifier.classify(testing_set[3][0]), "Confidence %: ", voted_classifier.confidence(testing_set[3][0])*100)
+
+print("Classification: ", voted_classifier.classify(testing_set[4][0]), "Confidence %: ", voted_classifier.confidence(testing_set[4][0])*100)
+
+print("Classification: ", voted_classifier.classify(testing_set[5][0]), "Confidence %: ", voted_classifier.confidence(testing_set[5][0])*100)
